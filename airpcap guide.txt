@@ -1,0 +1,23 @@
+in airpcap replay
+3rd is header = 1A radiotap header
+4th 00
+5th then destination mac address = FF FF FF FF FF FF
+11th 00
+12th source mac address
+
+wireshark hexdump of packet the ip address begins at 17th byte 
+airpcapreplay starts at 5th byte
+
+That's it — exactly what we wanted.
+So to summarize the working method for any packet:
+
+Take the Wireshark hexdump
+Read bytes 3-4 as little-endian to get the radiotap header length (N)
+Strip the first N bytes
+Type the remaining bytes into AirpcapReplay as one continuous hex string (no spaces)
+
+That'll give you a correctly-formed 802.11 frame for replay every time.
+
+basically 27th byte in wireshark is 1st in airpcap replay
+
+de auth: c0000000ffffffffffff58cb52d8a8b258cb52d8a8b20000030000 where 58:cb:52:d8:a8:b2 is destination.
