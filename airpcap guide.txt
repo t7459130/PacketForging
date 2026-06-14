@@ -21,3 +21,4 @@ That'll give you a correctly-formed 802.11 frame for replay every time.
 basically 27th byte in wireshark is 1st in airpcap replay
 
 de auth: c0000000ffffffffffff58cb52d8a8b258cb52d8a8b20000030000 where 58:cb:52:d8:a8:b2 is destination.
+unencrypted timestamp: d4 00 00 00 02 e0 80 05 71 c5 c9 2b d4 e6
